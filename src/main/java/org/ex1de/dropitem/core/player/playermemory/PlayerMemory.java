@@ -1,4 +1,6 @@
 package org.ex1de.dropitem.core.player.playermemory;
 
-public class PlayerMemory {
+import java.io.Serializable;
+
+public class PlayerMemory implements Serializable {
 }
