@@ -1,4 +1,0 @@
-name: dropitem
-version: '${version}'
-main: org.ex1de.dropitem.Dropitem
-api-version: '1.20'

@@ -1,0 +1,11 @@
+name: dropitem
+version: '${version}'
+main: org.ex1de.dropitem.Dropitem
+description: Plugin to specify items list to drop after player's death.
+author: ex1de
+api-version: '1.20'
+
+commands:
+  dropitem:
+    description: Command to manage player's drop list.
+    usage: /<command> [get | add | remove | clear] [item_name] [item_count]

@@ -17,6 +17,8 @@ repositories {
     }
 }
 
+libsDirectory = file("C:\\Users\\okolo\\OneDrive\\Рабочий стол\\1.20 server\\plugins")
+
 dependencies {
     compileOnly "io.papermc.paper:paper-api:1.20.4-R0.1-SNAPSHOT"
 }
@@ -41,7 +43,8 @@ processResources {
     def props = [version: version]
     inputs.properties props
     filteringCharset 'UTF-8'
-    filesMatching('paper-plugin.yml') {
+    filesMatching('plugin.yml') {
         expand props
     }
 }
+
