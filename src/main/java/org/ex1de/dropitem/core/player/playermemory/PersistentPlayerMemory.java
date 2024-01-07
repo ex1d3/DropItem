@@ -11,6 +11,8 @@ import java.io.InputStream;
 import java.io.ObjectInputStream;
 
 public class PersistentPlayerMemory implements PersistentDataType<byte[], PlayerMemory> {
+    public static final String TOKEN = "player_memory";
+
     @Override
     public @NotNull Class<byte[]> getPrimitiveType() {
         return byte[].class;
