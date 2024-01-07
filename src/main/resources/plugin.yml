@@ -6,6 +6,6 @@ author: ex1de
 api-version: '1.20'
 
 commands:
-  dropitem:
+  drop_item:
     description: Command to manage player's drop list.
     usage: /<command> [get | add | remove | clear] [item_name] [item_count]

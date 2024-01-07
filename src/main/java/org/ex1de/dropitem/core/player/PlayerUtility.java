@@ -16,9 +16,9 @@ public final class PlayerUtility {
     public static PlayerMemory getMemory(
             @NotNull Player p,
             @NotNull JavaPlugin plugin) {
-        PersistentDataContainer data = p.getPersistentDataContainer();
+        PersistentDataContainer pdc = p.getPersistentDataContainer();
 
-        return Objects.requireNonNull(data.get(
+        return Objects.requireNonNull(pdc.get(
                 PlayerMemory.getNamespacedKey(plugin),
                 new PersistentPlayerMemory()
         ));
@@ -29,9 +29,9 @@ public final class PlayerUtility {
             @NotNull PlayerMemory pMemory,
             @NotNull JavaPlugin plugin
     ) {
-        PersistentDataContainer data = p.getPersistentDataContainer();
+        PersistentDataContainer pdc = p.getPersistentDataContainer();
 
-        data.set(
+        pdc.set(
                 PlayerMemory.getNamespacedKey(plugin),
                 new PersistentPlayerMemory(),
                 pMemory

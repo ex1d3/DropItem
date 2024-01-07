@@ -19,7 +19,7 @@ public class DropItem extends JavaPlugin {
         pluginManager.registerEvents(new OnDeathListener(this), this);
         pluginManager.registerEvents(new OnQuitListener(this), this);
 
-        this.getCommand("dropitem").setExecutor(new OnDropItemCommand(this));
+        this.getCommand("drop_item").setExecutor(new OnDropItemCommand(this));
 
     }
 
