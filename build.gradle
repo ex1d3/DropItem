@@ -5,6 +5,13 @@ plugins {
 group = 'org.ex1de'
 version = '1.0-SNAPSHOT'
 
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
 repositories {
     mavenCentral()
     maven {
@@ -29,6 +36,12 @@ dependencies {
 
     // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
     implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.14.0'
+
+    testImplementation 'com.github.seeseemelk:MockBukkit-v1.20:3.9.0'
+    compileOnly "org.spigotmc:spigot-api:1.20.4-R0.1-SNAPSHOT"
+
+    testImplementation(platform('org.junit:junit-bom:5.10.1'))
+    testImplementation('org.junit.jupiter:junit-jupiter')
 }
 
 def targetJavaVersion = 17
