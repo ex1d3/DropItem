@@ -8,7 +8,7 @@ import org.ex1de.dropitem.listener.ondeath.OnDeathListener;
 import org.ex1de.dropitem.listener.onjoin.OnJoinListener;
 import org.ex1de.dropitem.listener.onquit.OnQuitListener;
 
-public final class Dropitem extends JavaPlugin {
+public class DropItem extends JavaPlugin {
 
     @Override
     public void onEnable() {
