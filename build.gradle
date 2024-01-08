@@ -5,7 +5,7 @@ plugins {
 group = 'org.ex1de'
 version = '1.0-SNAPSHOT'
 
-test {
+tasks.named("test", Test) {
     useJUnitPlatform()
     testLogging {
         events "passed", "skipped", "failed"
