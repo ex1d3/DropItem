@@ -22,6 +22,8 @@ class TestPlayerMemory {
     static void loadAll() {
         server = MockBukkit.mock();
         plugin = MockBukkit.load(DropItem.class);
+        // Implicit player initializing shutdown :)
+        server.getPluginManager().unregisterPluginEvents(plugin);
     }
 
     @AfterAll
