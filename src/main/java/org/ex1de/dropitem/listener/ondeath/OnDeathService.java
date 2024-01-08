@@ -3,9 +3,13 @@ package org.ex1de.dropitem.listener.ondeath;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.persistence.PersistentDataContainer;
+import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.ex1de.dropitem.core.item.ItemMemory;
 import org.ex1de.dropitem.core.player.PlayerUtility;
 import org.ex1de.dropitem.core.player.playermemory.PlayerMemory;
 
@@ -34,7 +38,16 @@ public class OnDeathService {
                     entry.getKey(),
                     entry.getValue()
             );
-            block.getWorld().dropItemNaturally(location, itemStack);
+
+            Item item =
+                    block.getWorld().dropItemNaturally(location, itemStack);
+            PersistentDataContainer pdc = item.getPersistentDataContainer();
+
+            pdc.set(
+                    ItemMemory.getNamespacedKey(plugin),
+                    PersistentDataType.BOOLEAN,
+                    true
+            );
         }
     }
 }

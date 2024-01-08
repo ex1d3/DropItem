@@ -4,6 +4,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.ex1de.dropitem.core.player.PlayerUtility;
 import org.ex1de.dropitem.core.player.playermemory.PlayerMemory;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.UUID;
 
@@ -14,7 +15,7 @@ public class OnJoinService {
         plugin = pluginToApply;
     }
 
-    public void loadPlayerData(Player p) {
+    public void loadPlayerData(@NotNull Player p) {
         UUID pId = p.getUniqueId();
         PlayerMemory pMemory;
 
