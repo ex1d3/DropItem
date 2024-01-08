@@ -98,13 +98,13 @@ public final class PlayerUtility {
         File file = new File(pFolderPath + PLAYER_DATA_FILE_PATH);
         FileConfiguration cfg = YamlConfiguration.loadConfiguration(file);
 
-        pMemory.setDropList(loadMemoryItems(cfg));
+        pMemory.setDropList(loadMemoryDropList(cfg));
 
         return pMemory;
     }
 
     @NotNull
-    private static Map<Material, Integer> loadMemoryItems(
+    private static Map<Material, Integer> loadMemoryDropList(
             @NotNull FileConfiguration cfg
     ) {
         Map<Material, Integer> dropList = new EnumMap<>(Material.class);
