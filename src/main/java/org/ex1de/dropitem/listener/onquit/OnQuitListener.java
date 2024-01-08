@@ -14,10 +14,7 @@ public final class OnQuitListener implements Listener {
     }
 
     @EventHandler
-    @NotNull
-    public boolean onQuitHandler(@NotNull PlayerQuitEvent e) {
+    public void onQuitHandler(@NotNull PlayerQuitEvent e) {
         onQuitService.savePlayerData(e.getPlayer());
-
-        return true;
     }
 }

@@ -14,10 +14,8 @@ public class OnDeathListener implements Listener {
     }
 
     @EventHandler
-    public boolean onDeathHandler(PlayerDeathEvent e) {
+    public void onDeathHandler(PlayerDeathEvent e) {
         Player p = e.getPlayer();
         onDeathService.dropItemsFromDropList(p);
-
-        return true;
     }
 }
