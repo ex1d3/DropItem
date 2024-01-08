@@ -15,10 +15,10 @@ import java.util.UUID;
 @Getter
 @Setter
 public class PlayerMemory implements Serializable {
-    private Map<Material, Integer> dropItems;
+    private Map<Material, Integer> dropList;
 
     public PlayerMemory() {
-        this.dropItems = new EnumMap<>(Material.class);
+        this.dropList = new EnumMap<>(Material.class);
     }
 
     @NotNull
