@@ -1,21 +1,26 @@
-package org.ex1de.dropitem.listener.onjoin;
+package org.ex1de.dropitem.listener;
 
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.ex1de.dropitem.core.player.PlayerUtility;
 import org.ex1de.dropitem.core.player.playermemory.PlayerMemory;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.UUID;
 
-public class OnJoinService {
+public class OnJoinListener implements Listener {
     private final JavaPlugin plugin;
 
-    public OnJoinService(final JavaPlugin pluginToApply) {
-        plugin = pluginToApply;
+    public OnJoinListener(final JavaPlugin plugin) {
+        this.plugin = plugin;
     }
 
-    public void loadPlayerData(@NotNull Player p) {
+    @EventHandler
+    public void onJoinHandler(PlayerJoinEvent pJoinEvent) {
+        Player p = pJoinEvent.getPlayer();
+
         UUID pId = p.getUniqueId();
         PlayerMemory pMemory;
 

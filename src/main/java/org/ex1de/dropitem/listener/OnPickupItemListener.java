@@ -1,4 +1,4 @@
-package org.ex1de.dropitem.listener.onpickupitem;
+package org.ex1de.dropitem.listener;
 
 import org.bukkit.entity.Item;
 import org.bukkit.event.EventHandler;

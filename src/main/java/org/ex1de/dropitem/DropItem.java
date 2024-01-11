@@ -4,10 +4,10 @@ import org.bukkit.Server;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.ex1de.dropitem.command.dropitem.OnDropItemCommand;
-import org.ex1de.dropitem.listener.ondeath.OnDeathListener;
-import org.ex1de.dropitem.listener.onjoin.OnJoinListener;
-import org.ex1de.dropitem.listener.onpickupitem.OnPickupItemListener;
-import org.ex1de.dropitem.listener.onquit.OnQuitListener;
+import org.ex1de.dropitem.listener.OnDeathListener;
+import org.ex1de.dropitem.listener.OnJoinListener;
+import org.ex1de.dropitem.listener.OnPickupItemListener;
+import org.ex1de.dropitem.listener.OnQuitListener;
 
 public class DropItem extends JavaPlugin {
 

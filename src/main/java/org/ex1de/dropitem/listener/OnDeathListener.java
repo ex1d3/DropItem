@@ -1,10 +1,13 @@
-package org.ex1de.dropitem.listener.ondeath;
+package org.ex1de.dropitem.listener;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
@@ -15,14 +18,16 @@ import org.ex1de.dropitem.core.player.playermemory.PlayerMemory;
 
 import java.util.Map;
 
-public class OnDeathService {
+public class OnDeathListener implements Listener {
     private final JavaPlugin plugin;
 
-    public OnDeathService(final JavaPlugin pluginToApply) {
-        plugin = pluginToApply;
+    public OnDeathListener(final JavaPlugin plugin) {
+        this.plugin = plugin;
     }
 
-    public void dropItemsFromDropList(Player p) {
+    @EventHandler
+    public void onDeathHandler(PlayerDeathEvent e) {
+        Player p = e.getPlayer();
         float centerOfBlock = 0.5F;
 
         PlayerMemory pMemory = PlayerUtility.getMemory(p, plugin);
@@ -51,4 +56,3 @@ public class OnDeathService {
         }
     }
 }
-

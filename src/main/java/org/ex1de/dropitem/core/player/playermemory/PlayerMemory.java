@@ -8,17 +8,17 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
-import java.util.EnumMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 @Getter
 @Setter
 public class PlayerMemory implements Serializable {
     private Map<Material, Integer> dropList;
+    private List<Material> cachedSearchItems;
 
     public PlayerMemory() {
-        this.dropList = new EnumMap<>(Material.class);
+        dropList = new EnumMap<>(Material.class);
+        cachedSearchItems = Arrays.stream(Material.values()).toList();
     }
 
     @NotNull
