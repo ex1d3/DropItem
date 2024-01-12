@@ -37,7 +37,12 @@ public class OnDropItemCommand implements CommandExecutor, TabCompleter {
             return false;
         }
 
-        Player p = (Player) sender;
+        Player p = plugin.getServer().getPlayer(args[ArgsIndex.NICKNAME]);
+
+        if (p == null) {
+            return false;
+        }
+
         PlayerMemory pMemory = PlayerUtility.getMemory(p, plugin);
 
         String rawMessage = executeCommandAction(
@@ -94,9 +99,15 @@ public class OnDropItemCommand implements CommandExecutor, TabCompleter {
             String materialNameToSearch = args[ArgsIndex.MATERIAL];
             Material[] materials;
 
+            Player p = plugin.getServer().getPlayer(args[ArgsIndex.NICKNAME]);
+
+            if (p == null) {
+                return new ArrayList<>();
+            }
+
             if (isRemoveAction) {
                 PlayerMemory pMemory = PlayerUtility.getMemory(
-                        (Player) sender,
+                        p,
                         plugin
                 );
                 Map<Material, Integer> dropList = pMemory.getDropList();
