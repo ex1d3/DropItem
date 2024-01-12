@@ -8,4 +8,4 @@ api-version: '1.20'
 commands:
   drop_item:
     description: Command to manage player's drop list.
-    usage: /<command> [get/add/remove/clear] [item_name] [item_count]
+    usage: /<command> [playerName] [get | add | remove | clear] [itemName] [itemCount]
